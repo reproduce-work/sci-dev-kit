@@ -1,3 +1,5 @@
 .cache*
 .ipython*
 .local*
+.jupyter*
+.DS_Store
