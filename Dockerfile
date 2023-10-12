@@ -32,9 +32,14 @@ RUN chmod a+x /usr/local/bin/livepreview
 
 # Install from requirements.tfxt file
 COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
-RUN pip install --quiet --no-cache-dir --requirement /tmp/requirements.txt
-
 
 # Switch back to the new 'open' user as the default user
 USER open
 WORKDIR /home/open
+
+RUN pip install --quiet --no-cache-dir --requirement /tmp/requirements.txt
+
+
+
+
+CMD ["jupyter", "lab"]
